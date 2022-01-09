@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <div class="header_nav"></div>  
+            <img src='logo.png' class="logo">
+            <%- include('nav.ejs') %>
+        </div>
+        </header>
+        <h1>
+            CONTACT US
+        </h1>
+        <p>
+            Please drop down your details and problems
+        </p>
+        <form id="contact-form" method="POST" action="/contact" >
+            <label for="who">Name:</label>
+            <input type="text" name="who" placeholder="Your Name..." value="<%= qs.person %>">
+            <label for="email">Email:</label>
+            <input type="text" name="email" placeholder="Your Email..." value="<%= qs.email %>">
+            <label for="issue">Problem:</label>
+            <textarea type="text" name="issue" placeholder="What is your problem..." value="<%= qs.issue %>"></textarea>
+            <input type="submit" value="submit"/>
+        </form>
+    </body>
+    <footer>
+        Credited to https://ghibliapi.herokuapp.com/#
+    </footer>
+</html>

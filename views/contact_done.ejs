@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Done Request</title>
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <header>
+            <div class="header_nav"></div>  
+                <img src='logo.png' class="logo">
+                <%- include('nav.ejs') %>
+            </div>
+        </header>
+        <h1>
+            CONTACT US
+        </h1>
+        <p>
+            Thanks for your feedback!
+        </p>
+        <p>
+            We will reply you soon! <%= data.who %>
+        </p>
+    </body>
+    <footer>
+        Credited to https://ghibliapi.herokuapp.com/#
+    </footer>
+</html>

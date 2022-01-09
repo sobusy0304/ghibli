@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <div class="header_nav"></div>  
+                <img src='logo.png' class="logo">
+                <%- include('nav.ejs') %>
+            </div>
+        </header>
+         
+        <div class="slideshow">
+            <% for(var i=0; i < imagelist.length;i ++){ %>
+            <div class="myslides fade">
+                <img src="<%= imagelist[i].image %>" class="image_slide">
+                <div class="text"><a href="/story">Shop Now</a></div>
+            </div>
+            <% } %>  
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slides[slideIndex-1].style.display = "block";
+            }      
+        </script>
+    </body>
+    <footer>
+        Credited to https://ghibliapi.herokuapp.com/#
+    </footer>
+</html>
